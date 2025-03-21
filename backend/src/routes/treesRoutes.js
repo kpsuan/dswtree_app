@@ -6,25 +6,49 @@ const router = express.Router();
 
 router.post('/', protectRoute, async (req, res) => {
     try {
-        const { name, description, image} = req.body;
+        const {
+            name,
+            commonNames,
+            type,
+            description,
+            image,
+            toxicity,
+            humidity,
+            sunlight,
+            location,
+            water,
+            fertilizerType,
+            fertilizeEvery,
+            temperature,
+            resistanceZone,
+          } = req.body;
         
-        if (!name || !description || !image ) {
-            return res.status(400).json({ message: 'All fields are required' });
+        if (!name || !description || !image || !type ) {
+            return res.status(400).json({ message: "Name, description, type, and image are required" });
         }
 
         //upload image to cloudinary
         const uploadResponse = await cloudinary.uploader.upload(image);
-
         const imageUrl = uploadResponse.secure_url;
 
         //save to db 
 
         const newTree = await Tree.create({ 
-            name, 
-            description, 
-            price, 
-            image: imageUrl, 
-            user: req.user._id
+            name,
+            commonNames,
+            type,
+            description,
+            image: imageUrl,
+            toxicity,
+            humidity,
+            sunlight,
+            location,
+            water,
+            fertilizerType,
+            fertilizeEvery,
+            temperature,
+            resistanceZone,
+            user: req.user._id,
         });
 
         await newTree.save();

@@ -136,6 +136,56 @@ const styles = StyleSheet.create({
   buttonIcon: {
     marginRight: 8,
   },
+
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  dropdownCard: {
+    width: '85%',
+    backgroundColor: 'white',
+    borderRadius: 16,
+    paddingVertical: 16,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+  },
+  dropdownTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: COLORS.textPrimary,
+    marginBottom: 12,
+    paddingHorizontal: 20,
+    textAlign: 'center',
+  },
+  optionContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+  },
+  optionBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  iconContainer: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  optionText: {
+    flex: 1,
+    fontSize: 16,
+    color: COLORS.textPrimary,
+  }
+  
 });
 
 export default styles;

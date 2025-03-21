@@ -39,7 +39,7 @@ export default function TabLayout() {
             <Tabs.Screen 
                 name = 'create'
                 options = {{
-                    title: "Adopt",
+                    title: "Add",
                     tabBarIcon: ({color, size}) => (<Ionicons 
                         name = "add-circle-outline"
                         size = {size}
