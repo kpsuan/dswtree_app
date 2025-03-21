@@ -35,7 +35,7 @@ export default function Signup() {
         <View style = {styles.card}>
           <View style = {styles.header}>
             <Text style = {styles.title}>🌱</Text>
-            <Text style = {styles.title}>DSWTree</Text>
+            <Text style = {styles.title}>dswtree</Text>
             <Text style = {styles.subtitle}>Plant. Adopt. Make a difference, one seed at a time.
             </Text>
           </View>

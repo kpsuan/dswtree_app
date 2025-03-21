@@ -11,6 +11,20 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "center",
   },
+
+  container2: {
+    flexGrow: 1,
+    backgroundColor: COLORS.background,
+    padding: 20,
+    justifyContent: "top",
+  },
+  container3: {
+    flexGrow: 1,
+    padding: 20,
+    justifyContent: "bottom",
+    marginTop: 324,
+  },
+  
   scrollViewStyle: {
     flex: 1,
     backgroundColor: COLORS.background,
@@ -36,6 +50,17 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     marginTop: 24,
   },
+
+  card2: {
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: COLORS.black,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+    marginTop: 64,
+  },
   header: {
     alignItems: "center",
     marginBottom: 24,
@@ -46,11 +71,35 @@ const styles = StyleSheet.create({
     color: COLORS.textPrimary,
     marginBottom: 8,
   },
+
   subtitle: {
     fontSize: 16,
     color: COLORS.textSecondary,
     textAlign: "center",
   },
+
+  onboardingTitle: {
+    fontSize: 35,
+    fontWeight: "700",
+    color: "#FFECCC",
+    marginBottom: 8,
+  },
+  onboardingSubtitle: {
+    fontSize: 28,
+    fontWeight: "100",
+    color: "#FFECCC",
+    textAlign: "center",
+  },
+
+  onboardingText: {
+    fontSize: 16,
+    paddingTop: 12,
+    fontWeight: "200",
+    width: 240,
+    color: "#EBEAEC",
+    textAlign: "center",
+  },
+
   formContainer: {
     marginBottom: 16,
   },
@@ -96,8 +145,23 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
   },
-  buttonText: {
-    color: COLORS.white,
+
+  buttonOnboarding: {
+    backgroundColor: "#EBEAEC",
+    borderRadius: 12,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 16,
+    shadowColor: COLORS.black,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+
+  buttonTextOnboarding: {
+    color: "#3F414E",
     fontSize: 16,
     fontWeight: "600",
   },

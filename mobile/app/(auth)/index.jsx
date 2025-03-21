@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, KeyboardAvoidingView, Platform, Alert } from 'react-native'
 import styles from '../../assets/styles/login.styles'
 import { useState, useEffect } from 'react'
 import { Image } from "expo-image";
@@ -17,17 +17,19 @@ import Animated, {
   cancelAnimation,
   Keyframe
 } from 'react-native-reanimated';
-
+import {useAuthStore} from '../../store/authStore';
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const {isLoading, login} = useAuthStore();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    const result = await login(email, password);
 
-  }
+    if(!result.success) Alert.alert("Error", result.error);
+  };
 
 // Create shared values for animations
 const scale = useSharedValue(1);
@@ -101,6 +103,8 @@ const animatedStyles = useAnimatedStyle(() => {
         style={[styles.illustrationImage, animatedStyles]}
         resizeMode="contain"
       />
+      <Text style = {styles.title}>dswtree</Text>
+
       </View>
 
       <View style = {styles.card}>
