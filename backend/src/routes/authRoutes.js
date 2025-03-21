@@ -3,9 +3,11 @@ import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 const router = express.Router();
+
 const generateToken = (userId) => {
-    jwt.sign({userId}, process.env.JWT_SECRET, { expiresIn: '15d' });
-}
+    return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '15d' });
+};
+
 
 router.post('/register', async (req, res) => {
     try {
@@ -66,7 +68,7 @@ router.post('/register', async (req, res) => {
         });
 
     } catch (error) {
-        comsole.log("Registration error: ", error);
+        console.log("Registration error: ", error);
         res.status(500).json({ message: 'Something went wrong' });        
         
     }
@@ -102,5 +104,6 @@ router.post('/login', async (req, res) => {
         
     }
 });
+
 
 export default router;
