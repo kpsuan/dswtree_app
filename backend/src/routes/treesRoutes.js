@@ -95,4 +95,14 @@ router.delete('/:id', protectRoute, async (req, res) => {
     }
 });
 
+router.get('user-trees', protectRoute, async (req, res) => {
+    try {
+        const trees = await Tree.find({ user: req.user._id }).sort({ createdAt: -1 });
+        res.json(trees);
+    } catch (error) {
+        console.error('Error fetching user trees', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 export default router; 
